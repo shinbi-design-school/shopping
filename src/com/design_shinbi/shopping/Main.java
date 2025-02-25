@@ -11,25 +11,25 @@ public class Main {
 		int totalPrice = 0;      // 価格 (税抜き)
 		double totalPriceWithTax = 0.0;    // 税込み価格
 		
-		List<String> productNames = new ArrayList<String>();
-		productNames.add("豆腐");		
-		productNames.add("玉子");
-		productNames.add("鉛筆");
-		productNames.add("USBメモリ");
-		productNames.add("あんぱん");
-		productNames.add("ノート");
-		productNames.add("蛍光灯");
-		productNames.add("トランプ");
-		productNames.add("スリッパ");
-		productNames.add("りんご");
+		List<String> itemNames = new ArrayList<String>();
+		itemNames.add("豆腐");		
+		itemNames.add("玉子");
+		itemNames.add("鉛筆");
+		itemNames.add("USBメモリ");
+		itemNames.add("あんぱん");
+		itemNames.add("ノート");
+		itemNames.add("蛍光灯");
+		itemNames.add("トランプ");
+		itemNames.add("スリッパ");
+		itemNames.add("りんご");
 
 		boolean loop = true;
 		List<String> cart = new ArrayList<String>();
 		while(loop) {
 			System.out.println("商品を選んでください。(買い物終了時は Enter のみを押す)");
-			for(int index = 0; index < productNames.size(); index++) {
+			for(int index = 0; index < itemNames.size(); index++) {
 				System.out.print(
-					String.format("[%d] %s   ", index, productNames.get(index))
+					String.format("[%d] %s   ", index, itemNames.get(index))
 				);
 			}
 			System.out.println("");
@@ -42,8 +42,8 @@ public class Main {
 				int index = -1;
 				try {
 					index = Integer.parseInt(input);
-					if(index >= 0 && index < productNames.size()) {
-						String name = productNames.get(index);
+					if(index >= 0 && index < itemNames.size()) {
+						String name = itemNames.get(index);
 						cart.add(name);
 						
 						if(name.equals("豆腐")) {
@@ -96,8 +96,8 @@ public class Main {
 				}
 			}
 
-			String products = String.join(",", cart);
-			System.out.println("購入商品: " + products);
+			String items = String.join(",", cart);
+			System.out.println("購入商品: " + items);
 		}
 
 		int finalTotalPriceWithTax = (int)Math.floor(totalPriceWithTax);    // 小数点以下切り捨て
