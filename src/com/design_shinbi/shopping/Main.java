@@ -1,4 +1,4 @@
-package com.design_shinbi.products;
+package com.design_shinbi.shopping;
 
 import java.util.ArrayList;
 import java.util.List;
